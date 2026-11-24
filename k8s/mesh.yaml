@@ -1,0 +1,64 @@
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: strict
+  namespace: mesh-lab
+spec:
+  mtls:
+    mode: STRICT
+---
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: cuentas
+  namespace: mesh-lab
+spec:
+  host: cuentas.mesh-lab.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
+---
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: demo
+  namespace: mesh-lab
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts: ['*']
+---
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: cuentas
+  namespace: mesh-lab
+spec:
+  hosts: ['*']
+  gateways: [demo]
+  http:
+    - route:
+        - destination:
+            host: cuentas.mesh-lab.svc.cluster.local
+            subset: v1
+            port:
+              number: 8080
+          weight: 90
+        - destination:
+            host: cuentas.mesh-lab.svc.cluster.local
+            subset: v2
+            port:
+              number: 8080
+          weight: 10

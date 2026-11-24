@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+<title id="title">MOCOTOYO AWS Lab</title><desc id="desc">Laboratorio de entrega automatizada y comunicaciones seguras con GitHub Actions, Amazon EKS, Istio y Kiali.</desc>
+<rect width="1200" height="380" fill="#172B43"/>
+<rect x="55" y="47" width="40" height="4" fill="#FF9900"/>
+<text x="112" y="58" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#FFFFFF">MOCOTOYO</text>
+<text x="57" y="118" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#C8D5E4">LABORATORIO DE MICROSERVICIOS</text>
+<text x="52" y="214" font-family="Georgia, DejaVu Serif, serif" font-size="91" fill="#FFFFFF">AWS Lab</text>
+<text x="57" y="260" font-family="Arial, sans-serif" font-size="23" fill="#DCE4ED">Entrega automatizada y comunicaciones seguras</text>
+<line x1="57" y1="300" x2="1140" y2="300" stroke="#42556B"/>
+<text x="57" y="340" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">GitHub Actions</text>
+<text x="254" y="340" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Amazon EKS</text>
+<text x="428" y="340" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Istio</text>
+<text x="518" y="340" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Kiali</text>
+<text x="1138" y="340" text-anchor="end" font-family="Arial, sans-serif" font-size="13" letter-spacing="1" fill="#FFB547">MÓNICA TORRICO</text>
+<text x="1128" y="218" text-anchor="end" font-family="Georgia, DejaVu Serif, serif" font-size="170" fill="#243E5A">01</text>
+</svg>

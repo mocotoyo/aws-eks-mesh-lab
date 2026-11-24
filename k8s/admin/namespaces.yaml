@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mesh-lab
+  labels:
+    istio-injection: enabled
+    proyecto: mesh-lab
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: istio-ingress
+  labels:
+    istio-injection: enabled
+    proyecto: mesh-lab
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cuentas
+  namespace: mesh-lab

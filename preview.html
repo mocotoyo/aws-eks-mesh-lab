@@ -1,0 +1,204 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>mocotoyo AWS Lab · Vista previa del repositorio</title><style>
+:root{--ink:#1f2937;--navy:#172b43;--muted:#596b7e;--line:#dce2e8;--orange:#ff9900}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8fa;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.top{background:#fff;border-bottom:1px solid var(--line);padding:21px max(24px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}.repo{font-size:19px;color:var(--navy)}.repo b{font-weight:650}.repo span{color:#8a98a8;margin:0 8px}.status{font-size:12px;color:var(--muted);letter-spacing:.03em}.subnav{max-width:1120px;margin:0 auto;padding:19px 0;display:flex;gap:25px;color:var(--muted);font-size:14px}.subnav strong{color:var(--navy);border-bottom:2px solid var(--orange);padding-bottom:8px}.shell{max-width:1120px;margin:0 auto 60px;background:#fff;border:1px solid var(--line);border-radius:7px;overflow:hidden}.filehead{padding:15px 34px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between}.filehead b{color:var(--navy)}.markdown{padding:36px 45px 44px;min-width:0}.markdown h1{font-size:32px;line-height:1.3;letter-spacing:-.8px;margin:26px 0 15px;padding-bottom:16px;border-bottom:1px solid var(--line)}.markdown h2{font-size:25px;line-height:1.35;margin:41px 0 21px;padding-bottom:11px;border-bottom:1px solid var(--line);letter-spacing:-.4px;color:var(--navy)}.markdown h3{font-size:19px;margin-top:27px;color:var(--navy)}.markdown p{margin:15px 0}.markdown a{color:#245f93;text-decoration:none}.markdown a:hover{text-decoration:underline}.markdown img{max-width:100%;height:auto;vertical-align:middle}.markdown img[alt^="Estado"],.markdown img[alt^="Práctica"]{height:28px;margin:2px 8px 2px 0}.markdown table{border-collapse:collapse;width:100%;margin:21px 0 23px;font-size:14px}.markdown th,.markdown td{padding:14px 16px;border:1px solid var(--line);text-align:left;vertical-align:top}.markdown th{background:var(--navy);color:white;font-weight:600}.markdown tr:nth-child(even){background:#f7f9fb}.markdown blockquote{margin:24px 0;padding:12px 21px;border-left:4px solid #7690ab;background:#f5f8fb;font-size:14px}.markdown blockquote p{margin:5px 0}.markdown blockquote.warning{border-left-color:#cf811e;background:#fff9ef}.markdown pre{padding:21px 23px;background:#f3f5f7;border:1px solid #e8ecf0;border-radius:5px;overflow:auto;font-size:13px;line-height:1.7}.markdown code{font:13px/1.6 Consolas,monospace;background:#eff2f5;border-radius:3px;padding:2px 5px}.markdown pre code{padding:0;background:none}.markdown hr{height:1px;border:0;background:var(--line);margin:32px 0}.markdown details{padding:15px 0}.markdown summary{cursor:pointer;color:var(--navy)}.markdown strong{font-weight:650}.diagram svg{width:100%;height:auto}.diagram p{font-size:12px;color:var(--muted)}.foot{max-width:1120px;margin:0 auto 35px;font-size:12px;color:var(--muted);text-align:center;padding:0 24px}@media(max-width:700px){.top{padding:17px 20px;align-items:flex-start;flex-direction:column;gap:4px}.repo{font-size:16px}.subnav{padding:15px 20px;gap:15px}.shell{margin:0 10px 30px}.filehead{padding:12px 18px}.filehead span{display:none}.markdown{padding:18px}.markdown h1{font-size:25px}.markdown h2{font-size:22px}.markdown table{display:block;overflow:auto;font-size:12px}.markdown td,.markdown th{padding:10px;min-width:100px}.markdown pre{padding:14px}.status{font-size:11px}}
+</style></head><body><header class="top"><div class="repo">mocotoyo<span>/</span><b>aws-eks-mesh-lab</b></div><div class="status">VISTA PREVIA LOCAL · SIN PUBLICACIÓN</div></header><nav class="subnav"><strong>Presentación del proyecto</strong><span>Documentación técnica</span></nav><main class="shell"><div class="filehead"><b>README.md</b><span>Portada del repositorio · mocotoyo</span></div><article class="markdown"><p align="center">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjM4MCIgdmlld0JveD0iMCAwIDEyMDAgMzgwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+Cjx0aXRsZSBpZD0idGl0bGUiPk1PQ09UT1lPIEFXUyBMYWI8L3RpdGxlPjxkZXNjIGlkPSJkZXNjIj5MYWJvcmF0b3JpbyBkZSBlbnRyZWdhIGF1dG9tYXRpemFkYSB5IGNvbXVuaWNhY2lvbmVzIHNlZ3VyYXMgY29uIEdpdEh1YiBBY3Rpb25zLCBBbWF6b24gRUtTLCBJc3RpbyB5IEtpYWxpLjwvZGVzYz4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iMzgwIiBmaWxsPSIjMTcyQjQzIi8+CjxyZWN0IHg9IjU1IiB5PSI0NyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQiIGZpbGw9IiNGRjk5MDAiLz4KPHRleHQgeD0iMTEyIiB5PSI1OCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iNCIgZmlsbD0iI0ZGRkZGRiI+TU9DT1RPWU88L3RleHQ+Cjx0ZXh0IHg9IjU3IiB5PSIxMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjMiIGZpbGw9IiNDOEQ1RTQiPkxBQk9SQVRPUklPIERFIE1JQ1JPU0VSVklDSU9TPC90ZXh0Pgo8dGV4dCB4PSI1MiIgeT0iMjE0IiBmb250LWZhbWlseT0iR2VvcmdpYSwgRGVqYVZ1IFNlcmlmLCBzZXJpZiIgZm9udC1zaXplPSI5MSIgZmlsbD0iI0ZGRkZGRiI+QVdTIExhYjwvdGV4dD4KPHRleHQgeD0iNTciIHk9IjI2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBmaWxsPSIjRENFNEVEIj5FbnRyZWdhIGF1dG9tYXRpemFkYSB5IGNvbXVuaWNhY2lvbmVzIHNlZ3VyYXM8L3RleHQ+CjxsaW5lIHgxPSI1NyIgeTE9IjMwMCIgeDI9IjExNDAiIHkyPSIzMDAiIHN0cm9rZT0iIzQyNTU2QiIvPgo8dGV4dCB4PSI1NyIgeT0iMzQwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNGRkZGRkYiPkdpdEh1YiBBY3Rpb25zPC90ZXh0Pgo8dGV4dCB4PSIyNTQiIHk9IjM0MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjRkZGRkZGIj5BbWF6b24gRUtTPC90ZXh0Pgo8dGV4dCB4PSI0MjgiIHk9IjM0MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjRkZGRkZGIj5Jc3RpbzwvdGV4dD4KPHRleHQgeD0iNTE4IiB5PSIzNDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZmlsbD0iI0ZGRkZGRiI+S2lhbGk8L3RleHQ+Cjx0ZXh0IHg9IjExMzgiIHk9IjM0MCIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0ZGQjU0NyI+TcOTTklDQSBUT1JSSUNPPC90ZXh0Pgo8dGV4dCB4PSIxMTI4IiB5PSIyMTgiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBEZWphVnUgU2VyaWYsIHNlcmlmIiBmb250LXNpemU9IjE3MCIgZmlsbD0iIzI0M0U1QSI+MDE8L3RleHQ+Cjwvc3ZnPg==" alt="mocotoyo AWS Lab: entrega automatizada y comunicaciones seguras" width="1200">
+</p>
+
+<h1>AWS Lab · CI/CD y Service Mesh</h1>
+<p><strong>Un laboratorio para publicar una aplicación en EKS, proteger el tráfico con Istio y observar sus versiones en Kiali.</strong></p>
+<p>Mónica Torrico · <a href="https://github.com/mocotoyo">@mocotoyo</a> · Kubernetes y microservicios</p>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDAiIGhlaWdodD0iMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iRVNUQURPIEtJVCBQUkVQQVJBRE8iPjxyZWN0IHdpZHRoPSIyNDAiIGhlaWdodD0iMzIiIHJ4PSIzIiBmaWxsPSIjNTM2NzdEIi8+PHJlY3Qgd2lkdGg9IjkzIiBoZWlnaHQ9IjMyIiByeD0iMyIgZmlsbD0iIzI0MzQ0OSIvPjx0ZXh0IHg9IjQ2LjUiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCI+RVNUQURPPC90ZXh0Pjx0ZXh0IHg9IjE2Ni41IiB5PSIyMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiPktJVCBQUkVQQVJBRE88L3RleHQ+PC9zdmc+" alt="Estado: kit preparado">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDAiIGhlaWdodD0iMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUFLDgUNUSUNBIExPQ0FMICsgQVdTIj48cmVjdCB3aWR0aD0iMjQwIiBoZWlnaHQ9IjMyIiByeD0iMyIgZmlsbD0iIzRCNjU3QyIvPjxyZWN0IHdpZHRoPSI5MyIgaGVpZ2h0PSIzMiIgcng9IjMiIGZpbGw9IiMyNDM0NDkiLz48dGV4dCB4PSI0Ni41IiB5PSIyMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiPlBSw4FDVElDQTwvdGV4dD48dGV4dCB4PSIxNjYuNSIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIj5MT0NBTCArIEFXUzwvdGV4dD48L3N2Zz4=" alt="Práctica local y AWS"></p>
+<p><a href="#inicio-rapido">Inicio rápido</a> · <a href="#arquitectura">Arquitectura</a> · <a href="#costos">Costos</a> · <a href="#demostracion">Demostración</a> · <a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md" target="_blank" rel="noopener">Guía completa</a> · <a href="#eliminar">DELETE</a></p>
+<hr>
+<p><a id="propuesta"></a></p>
+<h2>01 / Qué vas a demostrar</h2>
+<table>
+<thead>
+<tr>
+<th>Capacidad</th>
+<th>Ejercicio</th>
+<th>Evidencia esperada</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Entrega automatizada</strong></td>
+<td>GitHub Actions construye, Trivy analiza y ECR almacena la imagen</td>
+<td>Pipeline y digest de la imagen</td>
+</tr>
+<tr>
+<td><strong>Tráfico progresivo</strong></td>
+<td>Istio distribuye solicitudes entre v1 y v2</td>
+<td>Conteo canary y grafo de Kiali</td>
+</tr>
+<tr>
+<td><strong>Comunicaciones seguras</strong></td>
+<td>mTLS STRICT y autorización por identidad y método</td>
+<td>Solicitudes permitidas y rechazadas</td>
+</tr>
+<tr>
+<td><strong>Operación del laboratorio</strong></td>
+<td>Recreación de pods, rollback y eliminación</td>
+<td>Nueva réplica y cierre verificado</td>
+</tr>
+</tbody></table>
+<blockquote class="alert note"><p><strong>Estado del laboratorio</strong>
+<strong>Estado del proyecto:</strong> kit preparado con comprobaciones locales de código. La integración completa en AWS sigue pendiente de ejecución. Las cifras y respuestas de ejemplo no son resultados medidos del laboratorio.</p>
+</blockquote>
+<p><a id="costos"></a></p>
+<h2>02 / Un laboratorio con costo visible</h2>
+<table>
+<thead>
+<tr>
+<th><strong>USD 0 en AWS</strong></th>
+<th><strong>≈ USD 0,19 por hora</strong></th>
+<th><strong>USD 2 de reserva</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ensayo con <code>kind</code> en tu computadora</td>
+<td>EKS estándar y un nodo <code>t3.large</code></td>
+<td>Margen orientativo para una sesión corta</td>
+</tr>
+</tbody></table>
+<p><strong>La recomendación:</strong> ensayar localmente y reservar EKS para comprobar OIDC, ECR y el pipeline durante unas tres horas.</p>
+<p>La estimación AWS usa <code>us-east-1</code>, un nodo, 20 GiB gp3 y una IPv4 pública. No incluye NAT Gateway ni balanceador público. Tarifas de referencia del 24/11/2026, sin impuestos, créditos ni consumos adicionales. Una sesión de tres horas, más limpieza y reserva, da aproximadamente <strong>USD 1,07</strong> en el planificador.</p>
+<blockquote class="alert warning"><p><strong>Control de costos</strong>
+<strong>USD 2 no es un límite duro.</strong> Budgets avisa con retraso. El temporizador local depende del equipo y las credenciales. La protección principal es eliminar los recursos y comprobar el cierre. Si queda activo 24 horas, la base estimada ronda USD 4,58.</p>
+</blockquote>
+<p><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md#1-costos-antes-de-crear-recursos" target="_blank" rel="noopener">Ver desglose, alertas y tiempos</a></p>
+<p><a id="arquitectura"></a></p>
+<h2>03 / Arquitectura</h2>
+<div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" role="img" aria-label="Arquitectura GitHub ECR EKS Istio y Kiali"><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#687A8F"/></marker></defs><rect width="1000" height="550" fill="#F8FAFC"/><g fill="none" stroke="#687A8F" stroke-width="2" marker-end="url(#arr)"><path d="M230 80H400M590 80H740M140 117V165H825V117M825 117V190H455V230M230 270H360M550 270H620V240H700M550 270H620V350H700M890 240H935V450H890M795 387V430M700 467H590"/></g><g font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#172B43"><rect x="50" y="43" width="180" height="74" rx="4" fill="#E8EEF5"/><text x="140" y="75">GitHub Actions</text><text x="140" y="100" font-size="13">mocotoyo · Trivy</text><rect x="400" y="43" width="190" height="74" rx="4" fill="#E8EEF5"/><text x="495" y="88">Amazon ECR</text><rect x="740" y="43" width="190" height="74" rx="4" fill="#172B43"/><text x="835" y="88" fill="#fff">Amazon EKS</text><text x="665" y="65" font-size="12" fill="#53677D">imagen por digest</text><text x="485" y="153" font-size="12">OIDC e IAM: despliegue autorizado</text><rect x="360" y="230" width="190" height="80" rx="4" fill="#FFF0D7"/><text x="455" y="277">Istio Gateway</text><rect x="50" y="233" width="180" height="74" rx="4" fill="#E8EEF5"/><text x="140" y="266">Navegador local</text><text x="140" y="291" font-size="13">port-forward</text><rect x="700" y="203" width="190" height="74" rx="4" fill="#E8EEF5"/><text x="795" y="246">Cuentas v1</text><rect x="700" y="313" width="190" height="74" rx="4" fill="#E8EEF5"/><text x="795" y="356">Cuentas v2</text><rect x="700" y="430" width="190" height="74" rx="4" fill="#172B43"/><text x="795" y="474" fill="#fff">Prometheus</text><rect x="400" y="430" width="190" height="74" rx="4" fill="#172B43"/><text x="495" y="474" fill="#fff">Kiali</text><text x="620" y="218" font-size="13">mTLS</text><text x="300" y="255" font-size="12">túnel local</text></g></svg><p>La versión de GitHub renderiza el diagrama Mermaid del README.</p></div>
+<p>El pipeline entrega software. El gateway recibe las solicitudes del túnel local. Istio protege el tráfico hacia los pods y aplica las reglas de distribución. <strong>La prueba no expone una entrada pública.</strong></p>
+<p><a id="inicio-rapido"></a></p>
+<h2>04 / Inicio rápido</h2>
+<h3>Primero, el ensayo local</h3>
+<p>Descomprimir el paquete y entrar en <code>aws-eks-mesh-lab/</code>. Después de publicarlo, también podrás clonarlo desde <code>mocotoyo/aws-eks-mesh-lab</code>.</p>
+<pre><code class="language-bash">cp .env.lab.example .env.lab
+bash setup.sh --plan
+bash setup.sh --local
+</code></pre>
+<p>Requiere Docker, kind, kubectl, Helm, Python 3 y curl. Asignar recursos suficientes a Docker y revisar la compatibilidad Kubernetes/Istio. <a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md#4-preparacion" target="_blank" rel="noopener">Preparación completa</a>.</p>
+<h3>Después, una sesión corta en AWS</h3>
+<pre><code class="language-bash"># Editar antes .env.lab: cuenta esperada, correo y parámetros del laboratorio.
+bash setup.sh --plan
+bash setup.sh --aws --apply
+</code></pre>
+<p>Este paso <strong>crea recursos facturables</strong>. Requiere acceso AWS/GitHub y completar los prerrequisitos de <a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md#7-github-y-oidc" target="_blank" rel="noopener">OIDC y creación del entorno</a>. No ejecutar solamente copiando los comandos de la portada.</p>
+<p><a id="demostracion"></a></p>
+<h2>05 / Recorrido de la demostración</h2>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Qué haces</th>
+<th>Qué compruebas</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>01 · Publicar</strong></td>
+<td>Commit y push a <code>main</code></td>
+<td>Construcción, escaneo y rollout</td>
+</tr>
+<tr>
+<td><strong>02 · Observar</strong></td>
+<td>Abrir Kiali y generar solicitudes</td>
+<td>Topología y tráfico reciente</td>
+</tr>
+<tr>
+<td><strong>03 · Promover</strong></td>
+<td>Probar 90/10, 50/50 y 0/100</td>
+<td>Distribución entre versiones</td>
+</tr>
+<tr>
+<td><strong>04 · Proteger</strong></td>
+<td>Probar mTLS y AuthorizationPolicy</td>
+<td>Identidad y método autorizados</td>
+</tr>
+<tr>
+<td><strong>05 · Recuperar</strong></td>
+<td>Recrear un pod y revertir un cambio</td>
+<td>Comportamiento de recuperación</td>
+</tr>
+<tr>
+<td><strong>06 · Cerrar</strong></td>
+<td>Ejecutar DELETE y revisar residuos</td>
+<td>Fin de los recursos facturables del kit</td>
+</tr>
+</tbody></table>
+<p><strong>Canary de ejemplo, en local:</strong></p>
+<pre><code class="language-bash">bash scripts/canary.sh local 90 10
+python3 scripts/traffic.py --count 200
+
+bash scripts/canary.sh local 50 50
+python3 scripts/traffic.py --count 200
+
+bash scripts/canary.sh local 0 100
+python3 scripts/traffic.py --count 200
+</code></pre>
+<p>Para AWS, cambiar <code>local</code> por <code>aws</code>. El conteo es una muestra y la configuración necesita propagarse. Mantener el gateway abierto con port-forward. <a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md#10-acceso-a-la-aplicacion" target="_blank" rel="noopener">Ejercicios paso a paso</a>.</p>
+<p><a id="eliminar"></a></p>
+<h2>06 / Eliminar la prueba</h2>
+<p><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/actions/workflows/delete-lab.yml"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOTAiIGhlaWdodD0iMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iREVMRVRFIEVMSU1JTkFSIExBQk9SQVRPUklPIj48cmVjdCB3aWR0aD0iMjkwIiBoZWlnaHQ9IjMyIiByeD0iMyIgZmlsbD0iI0E5MkQzMSIvPjxyZWN0IHdpZHRoPSI5NCIgaGVpZ2h0PSIzMiIgcng9IjMiIGZpbGw9IiMyNDM0NDkiLz48dGV4dCB4PSI0Ny4wIiB5PSIyMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiPkRFTEVURTwvdGV4dD48dGV4dCB4PSIxOTIuMCIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIj5FTElNSU5BUiBMQUJPUkFUT1JJTzwvdGV4dD48L3N2Zz4=" alt="Abrir el workflow de eliminación"></a></p>
+<p><strong>El botón abre GitHub Actions.</strong> Después de publicar el repositorio y configurar el rol DELETE: pulsar <strong>Run workflow</strong>, elegir <code>main</code> y confirmar <code>mocotoyo-mesh-demo</code> o tu <code>LAB_ID</code>.</p>
+<p>Desde la terminal:</p>
+<pre><code class="language-bash">bash cleanup.sh --aws --apply       # Elimina los recursos AWS del kit
+bash cleanup.sh --local --apply     # Elimina únicamente kind local
+</code></pre>
+<p>Son alternativas para cada modalidad. Borrar pods o reducir nodos a cero mantiene el costo de EKS. El presupuesto y el proveedor OIDC compartido se conservan. <a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md#16-eliminar-el-laboratorio" target="_blank" rel="noopener">Eliminación, límites y recuperación</a>.</p>
+<p><a id="documentacion"></a></p>
+<h2>07 / Documentación</h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Cuándo abrirlo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUIA_COMPLETA.md" target="_blank" rel="noopener"><strong>Guía completa del laboratorio</strong></a></td>
+<td>Configuración y comandos de las 18 secciones</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/GUION_PRESENTADOR.md" target="_blank" rel="noopener">Guion del presentador</a></td>
+<td>Preparar la exposición y ordenar la demo</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/RECUPERACION.md" target="_blank" rel="noopener">Recuperación y limpieza</a></td>
+<td>Resolver una creación o eliminación parcial</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/VALIDACION.md" target="_blank" rel="noopener">Estado de validación</a></td>
+<td>Distinguir las comprobaciones locales de las pruebas pendientes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mocotoyo/aws-eks-mesh-lab/blob/main/docs/PUBLICAR_GITHUB.md" target="_blank" rel="noopener">Publicación y estilo del repositorio</a></td>
+<td>Subir el proyecto y conservar la apariencia de la portada</td>
+</tr>
+</tbody></table>
+<details>
+<summary><strong>Estructura del proyecto</strong></summary>
+
+<pre><code class="language-text">aws-eks-mesh-lab/
+├── README.md
+├── setup.sh
+├── cleanup.sh
+├── .env.lab.example
+├── app/
+├── k8s/
+├── scripts/
+├── tests/
+├── docs/
+│   ├── assets/
+│   ├── GUIA_COMPLETA.md
+│   └── PUBLICAR_GITHUB.md
+└── .github/workflows/
+    ├── deploy.yml
+    └── delete-lab.yml
+</code></pre>
+</details>
+
+<hr>
+<p><strong>Mónica Torrico · mocotoyo</strong><br>Laboratorio de Kubernetes y microservicios. Práctica local primero y cierre verificado al finalizar AWS.</p>
+</article></main><footer class="foot">Representación visual del README. GitHub aplica su propio tema y tipografía. Los enlaces de Actions requieren publicar y configurar el repositorio.</footer></body></html>

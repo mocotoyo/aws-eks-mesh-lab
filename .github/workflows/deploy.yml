@@ -1,0 +1,76 @@
+name: build-scan-deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['app/**', 'k8s/app.yaml', 'k8s/mesh.yaml', '.github/workflows/deploy.yml']
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: mesh-lab-aws
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: lab
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      ACCOUNT_ID: ${{ vars.ACCOUNT_ID }}
+      CLUSTER_NAME: ${{ vars.CLUSTER_NAME }}
+      ECR_REPO: ${{ vars.ECR_REPO }}
+      OIDC_SUBJECT: ${{ vars.OIDC_SUBJECT }}
+      EXPIRES_AT: ${{ vars.EXPIRES_AT }}
+      LAB_ENABLED: ${{ vars.LAB_ENABLED }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Bloqueo después del TTL
+        run: |
+          test "$LAB_ENABLED" = true
+          test -n "$EXPIRES_AT"
+          test "$(date +%s)" -lt "$EXPIRES_AT"
+      - name: Comprobar claims OIDC sin imprimir el token
+        run: python3 scripts/verify-oidc.py
+      - uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a
+        with:
+          role-to-assume: ${{ vars.ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: aws-actions/amazon-ecr-login@7290e214a610b32bc0eef81748948b6d466a8783
+      - name: Construir imagen
+        run: |
+          IMAGE="$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$GITHUB_SHA-$GITHUB_RUN_ATTEMPT"
+          docker build --pull -t "$IMAGE" app
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+      - name: Trivy bloquea HIGH y CRITICAL
+        uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2
+        with:
+          image-ref: ${{ env.IMAGE }}
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+          ignore-unfixed: false
+          format: table
+      - name: Publicar y resolver digest
+        run: |
+          docker push "$IMAGE"
+          DIGEST=$(aws ecr describe-images --repository-name "$ECR_REPO" --image-ids "imageTag=$GITHUB_SHA-$GITHUB_RUN_ATTEMPT" --query 'imageDetails[0].imageDigest' --output text)
+          echo "DEPLOY_IMAGE=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO@$DIGEST" >> "$GITHUB_ENV"
+      - name: Instalar kubectl de la versión del cluster
+        run: |
+          V=$(aws eks describe-cluster --name "$CLUSTER_NAME" --query cluster.version --output text)
+          curl -fLsS "https://dl.k8s.io/release/v$V.0/bin/linux/amd64/kubectl" -o kubectl
+          curl -fLsS "https://dl.k8s.io/release/v$V.0/bin/linux/amd64/kubectl.sha256" -o kubectl.sha256
+          echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+          sudo install -m 0755 kubectl /usr/local/bin/kubectl
+      - name: Desplegar
+        run: |
+          test "$(date +%s)" -lt "$EXPIRES_AT"
+          aws eks update-kubeconfig --name "$CLUSTER_NAME"
+          sed "s|IMAGE_PLACEHOLDER|$DEPLOY_IMAGE|g" k8s/app.yaml | kubectl apply -f -
+          kubectl apply -f k8s/mesh.yaml
+          kubectl rollout status deployment/cuentas-v1 -n mesh-lab --timeout=240s
+          kubectl rollout status deployment/cuentas-v2 -n mesh-lab --timeout=240s
+          kubectl get pods -n mesh-lab

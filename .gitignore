@@ -1,0 +1,7 @@
+.env.lab
+.state/
+evidencias/*
+!evidencias/.gitkeep
+__pycache__/
+*.pyc
+infra/generated/

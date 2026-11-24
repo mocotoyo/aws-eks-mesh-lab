@@ -1,0 +1,44 @@
+name: DELETE laboratorio AWS
+run-name: DELETE solicitado por ${{ github.actor }}
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_lab:
+        description: 'Escribe el LAB_ID exacto para eliminar clúster, nodo, ECR y roles'
+        required: true
+        type: string
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: mesh-lab-aws
+  cancel-in-progress: false
+jobs:
+  delete:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment: lab
+    env:
+      CONFIRM_LAB: ${{ inputs.confirm_lab }}
+      LAB_ID: ${{ vars.LAB_ID }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      OIDC_SUBJECT: ${{ vars.OIDC_SUBJECT }}
+      LAB_DELETE_TARGETS: ${{ vars.LAB_DELETE_TARGETS }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Confirmar nombre y confianza
+        run: |
+          test -n "$LAB_ID"
+          test "$CONFIRM_LAB" = "$LAB_ID"
+          test -n "$LAB_DELETE_TARGETS"
+          python3 scripts/verify-oidc.py
+      - uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a
+        with:
+          role-to-assume: ${{ vars.DELETE_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+          role-duration-seconds: 7200
+      - name: Eliminar recursos inventariados
+        run: python3 scripts/delete-cloud.py
