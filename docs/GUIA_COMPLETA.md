@@ -352,7 +352,7 @@ Si la creación falla, no repetir setup a ciegas: el inventario permanece para r
 <a id="9-primer-pipeline"></a>
 ## 9. Primer pipeline
 
-Publicar el contenido ya preparado. La versión pública lleva mocotoyo, sin información interna de DATEC:
+Publicar el contenido ya preparado. La versión pública utiliza la marca mocotoyo:
 
 ```bash
 # Solo si aún no inicializaste Git en este directorio:
@@ -566,7 +566,6 @@ Registra salidas reales de pods, servicios, configuración del mesh y conteo can
 - [Guion completo del presentador](GUION_PRESENTADOR.md)
 - [Recuperación y eliminación manual](RECUPERACION.md)
 - [Estado de validación](VALIDACION.md)
-- La versión interna DATEC se entrega como un README separado.
 
 No publicar resultados esperados como si fueran mediciones. Después de ejecutar AWS, añadir una sección “Resultados de la sesión” con fecha, región, duración y costo observado cuando la facturación se actualice.
 

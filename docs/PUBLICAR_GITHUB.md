@@ -1,6 +1,6 @@
 # Publicar y conservar el diseño
 
-La portada pública es README.md con marca mocotoyo. La versión interna DATEC se entrega por separado. El diseño usa un banner SVG, tablas Markdown y Mermaid. No depende de CSS personalizado dentro del README.
+La portada pública es README.md con marca mocotoyo. El diseño usa un banner SVG, tablas Markdown y Mermaid. No depende de CSS personalizado dentro del README.
 
 ## Archivos necesarios
 

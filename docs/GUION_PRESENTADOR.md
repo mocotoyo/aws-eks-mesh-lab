@@ -1,6 +1,6 @@
 # Guion de demostración
 
-**Externo:** mocotoyo AWS Lab. **Interno:** DATEC AWS Lab.
+**Proyecto:** mocotoyo AWS Lab.
 Presentadora: Mónica Torrico. Audiencia: equipo técnico o cliente en sesión de laboratorio.
 
 No crear EKS durante la exposición inicial si el objetivo es una demo breve. Ensayar localmente y preparar AWS dentro de la ventana de costo. Las pruebas AWS están pendientes hasta contar con evidencia real. Los números de diapositiva corresponden al deck de 14 láminas preparado en esta conversación.
@@ -34,4 +34,4 @@ No crear EKS durante la exposición inicial si el objetivo es una demo breve. En
 7. Guardar evidencias y ejecutar DELETE.
 8. Esperar eliminación efectiva y revisar la cuenta.
 
-La eliminación puede tardar más que la exposición. Reservar una ventana posterior y mantener la revisión hasta el cierre. El deck original es interno DATEC. Para uso externo, cambiar su portada y encabezados a mocotoyo antes de distribuirlo.
+La eliminación puede tardar más que la exposición. Reservar una ventana posterior y mantener la revisión hasta el cierre.
