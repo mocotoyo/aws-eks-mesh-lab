@@ -46,7 +46,7 @@ jobs:
           docker build --pull -t "$IMAGE" app
           echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
       - name: Trivy bloquea HIGH y CRITICAL
-        uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: ${{ env.IMAGE }}
           severity: HIGH,CRITICAL
